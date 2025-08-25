@@ -79,7 +79,8 @@ int main() {
 
   densidade_populacional = populacao / area;
   pib_per_capita = pib / populacao;
-  super_poder = populacao + area + pib + qtd_pontos_turisticos + pib_per_capita;
+  super_poder = populacao + area + pib + qtd_pontos_turisticos +
+                pib_per_capita + (1 / densidade_populacional);
 
   // Imprime os atributos da Carta 1
 
@@ -93,13 +94,14 @@ int main() {
   printf("Número de Pontos Turísticos: %d\n", qtd_pontos_turisticos);
   printf("Densidade Populacional: %.2f\n", densidade_populacional);
   printf("PIB per Capita: %.2f\n", pib_per_capita);
+  printf("Superpoder: %.2f\n", super_poder);
 
   // Cálculos usando atributos da carta 2
 
   densidade_populacional2 = populacao2 / area2;
   pib_per_capita2 = pib2 / populacao2;
-  super_poder2 =
-      populacao2 + area2 + pib2 + qtd_pontos_turisticos2 + pib_per_capita2;
+  super_poder2 = populacao2 + area2 + pib2 + qtd_pontos_turisticos2 +
+                 pib_per_capita2 + (1 / densidade_populacional2);
 
   // Imprime os atributos da Carta 2
 
@@ -113,6 +115,7 @@ int main() {
   printf("Número de Pontos Turísticos: %d\n", qtd_pontos_turisticos2);
   printf("Densidade Populacional: %.2f\n", densidade_populacional2);
   printf("PIB per Capita: %.2f\n", pib_per_capita2);
+  printf("Superpoder: %.2f\n", super_poder2);
 
   // Realizando comparações para verificar a carta ganhadora
   int ganhadoraPopulacao = populacao2 > populacao;
