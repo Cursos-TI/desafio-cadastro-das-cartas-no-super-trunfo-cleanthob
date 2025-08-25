@@ -5,26 +5,26 @@ int main() {
 
   // Variáveis da Carta 1
 
-  char estado[50] = "A";
-  char codigo[10] = "A01";
-  char cidade[50] = "Fortaleza";
-  int populacao = 1391000;
-  float area = 8000000;
-  float pib = 130599900000;
-  int qtd_pontos_turisticos = 2;
+  char estado[50];
+  char codigo[10];
+  char cidade[50];
+  int populacao;
+  float area;
+  float pib;
+  int qtd_pontos_turisticos;
   float densidade_populacional;
   float pib_per_capita;
   float super_poder;
 
   // Variáveis da Carta 2
 
-  char estado2[50] = "B";
-  char codigo2[10] = "B01";
-  char cidade2[50] = "Rio";
-  int populacao2 = 3000000;
-  float area2 = 1000000;
-  float pib2 = 900000000000;
-  int qtd_pontos_turisticos2 = 10;
+  char estado2[50];
+  char codigo2[10];
+  char cidade2[50];
+  int populacao2;
+  float area2;
+  float pib2;
+  int qtd_pontos_turisticos2;
   float densidade_populacional2;
   float pib_per_capita2;
   float super_poder2;
