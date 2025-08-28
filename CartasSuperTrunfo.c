@@ -3,7 +3,11 @@
 int main() {
   // Variáveis auxiliares
 
-  int escolhaComparacao;
+  int escolha_comparacao;
+  int escolha_comparacao2;
+  float valor1_carta1 = 0, valor1_carta2 = 0;
+  float valor2_carta1 = 0, valor2_carta2 = 0;
+  float soma_carta1 = 0, soma_carta2 = 0;
 
   // Variáveis da Carta 1
 
@@ -92,120 +96,98 @@ int main() {
 
   // Menu
 
-  printf("\n### Escolha uma opcao para comparacao ###\n");
+  printf("\n### Escolha a primeira opção para comparação ###\n");
 
-  printf("1. Nome do país\n");
-  printf("2. População\n");
-  printf("3. Área\n");
-  printf("4. PIB\n");
-  printf("5. Número de pontos turísticos\n");
-  printf("6. Densidade demográfica\n");
+  printf("1. População\n");
+  printf("2. Área\n");
+  printf("3. PIB\n");
+  printf("4. Número de pontos turísticos\n");
+  printf("5. Densidade demográfica\n");
 
-  scanf("%d", &escolhaComparacao);
+  scanf("%d", &escolha_comparacao);
 
-  switch (escolhaComparacao) {
+  printf("\n### Escolha a segunda opção para comparação ###\n");
+
+  if (escolha_comparacao != 1) printf("1. População\n");
+  if (escolha_comparacao != 2) printf("2. Área\n");
+  if (escolha_comparacao != 3) printf("3. PIB\n");
+  if (escolha_comparacao != 4) printf("4. Número de pontos turísticos\n");
+  if (escolha_comparacao != 5) printf("5. Densidade demográfica\n");
+
+  scanf("%d", &escolha_comparacao2);
+
+  // Comparação
+  if (escolha_comparacao == escolha_comparacao2) {
+    printf("Você escolheu o mesmo atributo duas vezes! Tente novamente.\n");
+    return 0;
+  }
+
+  switch (escolha_comparacao) {
     case 1:
-      printf("Verificando países\n");
-      printf("Carta 1: %s, Carta 2: %s\n", pais, pais2);
+      valor1_carta1 = populacao;
+      valor1_carta2 = populacao2;
       break;
     case 2:
-      printf("Comparando por população\n");
-      if (populacao == populacao2) {
-        printf("Carta 1: %s, Carta 2: %s\n", pais, pais2);
-        printf("EMPATE!\n");
-        printf("Carta 1: %d, Carta 2: %d\n", populacao, populacao2);
-      } else {
-        if (populacao > populacao2) {
-          printf("Carta 1: %s, Carta 2: %s\n", pais, pais2);
-          printf("Carta 1 ganhou\n");
-          printf("Carta 1: %d, Carta 2: %d\n", populacao, populacao2);
-        } else {
-          printf("Carta 1: %s, Carta 2: %s\n", pais, pais2);
-          printf("Carta 2 ganhou\n");
-          printf("Carta 1: %d, Carta 2: %d\n", populacao, populacao2);
-        }
-      }
+      valor1_carta1 = area;
+      valor1_carta2 = area2;
       break;
     case 3:
-      printf("Comparando por área\n");
-      if (area == area2) {
-        printf("Carta 1: %s, Carta 2: %s\n", pais, pais2);
-        printf("EMPATE!\n");
-        printf("Carta 1: %.2f, Carta 2: %.2f\n", area, area2);
-      } else {
-        if (area > area2) {
-          printf("Carta 1: %s, Carta 2: %s\n", pais, pais2);
-          printf("Carta 1 ganhou\n");
-          printf("Carta 1: %.2f, Carta 2: %.2f\n", area, area2);
-        } else {
-          printf("Carta 1: %s, Carta 2: %s\n", pais, pais2);
-          printf("Carta 2 ganhou\n");
-          printf("Carta 1: %.2f, Carta 2: %.2f\n", area, area2);
-        }
-      }
+      valor1_carta1 = pib;
+      valor1_carta2 = pib2;
       break;
     case 4:
-      printf("Comparando por pib\n");
-      if (pib == pib2) {
-        printf("Carta 1: %s, Carta 2: %s\n", pais, pais2);
-        printf("EMPATE!\n");
-        printf("Carta 1: %.2f, Carta 2: %.2f\n", pib, pib2);
-      } else {
-        if (pib > pib2) {
-          printf("Carta 1: %s, Carta 2: %s\n", pais, pais2);
-          printf("Carta 1 ganhou\n");
-          printf("Carta 1: %.2f, Carta 2: %.2f\n", pib, pib2);
-        } else {
-          printf("Carta 1: %s, Carta 2: %s\n", pais, pais2);
-          printf("Carta 2 ganhou\n");
-          printf("Carta 1: %.2f, Carta 2: %.2f\n", pib, pib2);
-        }
-      }
+      valor1_carta1 = qtd_pontos_turisticos;
+      valor1_carta2 = qtd_pontos_turisticos2;
       break;
     case 5:
-      printf("Comparando por quantidade de pontos turísticos\n");
-      if (qtd_pontos_turisticos == qtd_pontos_turisticos2) {
-        printf("Carta 1: %s, Carta 2: %s\n", pais, pais2);
-        printf("EMPATE!\n");
-        printf("Carta 1: %d, Carta 2: %d\n", qtd_pontos_turisticos,
-               qtd_pontos_turisticos2);
-      } else {
-        if (qtd_pontos_turisticos > qtd_pontos_turisticos2) {
-          printf("Carta 1: %s, Carta 2: %s\n", pais, pais2);
-          printf("Carta 1 ganhou\n");
-          printf("Carta 1: %d, Carta 2: %d\n", qtd_pontos_turisticos,
-                 qtd_pontos_turisticos2);
-        } else {
-          printf("Carta 1: %s, Carta 2: %s\n", pais, pais2);
-          printf("Carta 2 ganhou\n");
-          printf("Carta 1: %d, Carta 2: %d\n", qtd_pontos_turisticos,
-                 qtd_pontos_turisticos2);
-        }
-      }
-      break;
-    case 6:
-      printf("Comparando por densidade populacional\n");
-      if (densidade_populacional == densidade_populacional2) {
-        printf("Carta 1: %s, Carta 2: %s\n", pais, pais2);
-        printf("EMPATE!\n");
-        printf("Carta 1: %.2f, Carta 2: %.2f\n", densidade_populacional,
-               densidade_populacional2);
-      } else {
-        if (densidade_populacional < densidade_populacional2) {
-          printf("Carta 1: %s, Carta 2: %s\n", pais, pais2);
-          printf("Carta 1 ganhou\n");
-          printf("Carta 1: %.2f, Carta 2: %.2f\n", densidade_populacional,
-                 densidade_populacional2);
-        } else {
-          printf("Carta 1: %s, Carta 2: %s\n", pais, pais2);
-          printf("Carta 2 ganhou\n");
-          printf("Carta 1: %.2f, Carta 2: %.2f\n", densidade_populacional,
-                 densidade_populacional2);
-        }
-      }
+      valor1_carta1 = -densidade_populacional;
+      valor1_carta2 = -densidade_populacional2;
       break;
     default:
-      printf("Opcao invalida\n");
+      printf("Opção inválida\n");
   }
+
+  switch (escolha_comparacao2) {
+    case 1:
+      valor2_carta1 = populacao;
+      valor2_carta2 = populacao2;
+      break;
+    case 2:
+      valor2_carta1 = area;
+      valor2_carta2 = area2;
+      break;
+    case 3:
+      valor2_carta1 = pib;
+      valor2_carta2 = pib2;
+      break;
+    case 4:
+      valor2_carta1 = qtd_pontos_turisticos;
+      valor2_carta2 = qtd_pontos_turisticos2;
+      break;
+    case 5:
+      valor2_carta1 = -densidade_populacional;
+      valor2_carta2 = -densidade_populacional2;
+      break;
+    default:
+      printf("Opção inválida\n");
+  }
+
+  soma_carta1 = valor1_carta1 + valor2_carta1;
+  soma_carta2 = valor1_carta2 + valor2_carta2;
+
+  printf("\nResultado final:\n");
+  printf("%s -> %.2f + %.2f = %.2f\n", pais, valor1_carta1, valor2_carta1,
+         soma_carta1);
+  printf("%s -> %.2f + %.2f = %.2f\n", pais2, valor1_carta2, valor2_carta2,
+         soma_carta2);
+
+  if (soma_carta1 > soma_carta2) {
+    printf("Carta 1 (%s) venceu!\n", pais);
+  } else if (soma_carta2 > soma_carta1) {
+    printf("Carta 2 (%s) venceu\n", pais2);
+  } else {
+    printf("Empate!\n");
+  }
+
   return 0;
 }
