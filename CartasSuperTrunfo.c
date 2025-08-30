@@ -3,6 +3,12 @@
 int main() {
   // Variáveis auxiliares
 
+  char* escolhas[] = {"População",
+                      "Área",
+                      "PIB",
+                      "Número de Pontos Turísticos",
+                      "Densidade Populacional",
+                      "PIB per Capita"};
   int escolha_comparacao;
   int escolha_comparacao2;
   float valor1_carta1 = 0, valor1_carta2 = 0;
@@ -176,10 +182,12 @@ int main() {
   soma_carta2 = valor1_carta2 + valor2_carta2;
 
   printf("\nResultado final:\n");
-  printf("%s -> %.2f + %.2f = %.2f\n", pais, valor1_carta1, valor2_carta1,
-         soma_carta1);
-  printf("%s -> %.2f + %.2f = %.2f\n", pais2, valor1_carta2, valor2_carta2,
-         soma_carta2);
+  printf("%s: %s = %.2f, %s = %.2f -> Soma = %.2f\n", pais,
+         escolhas[escolha_comparacao - 1], valor1_carta1,
+         escolhas[escolha_comparacao2 - 1], valor2_carta1, soma_carta1);
+  printf("%s: %s = %.2f, %s = %.2f -> Soma = %.2f\n", pais2,
+         escolhas[escolha_comparacao - 1], valor1_carta2,
+         escolhas[escolha_comparacao2 - 1], valor2_carta2, soma_carta2);
 
   if (soma_carta1 > soma_carta2) {
     printf("Carta 1 (%s) venceu!\n", pais);
